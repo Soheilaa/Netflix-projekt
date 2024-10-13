@@ -126,17 +126,55 @@ h3 {
     padding: 10px;
   }
 
-  .movie-card1,
-  .movie-card {
-    flex: 1 1 calc(50% - 20px);
+  .movies {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two flexible columns that fit the screen */
+    gap: 20px;
+    justify-content: center; /* Center the content horizontally */
   }
 
-  h1,
-  h2,
-  h3 {
-    font-size: 1rem;
+  .movie-card1,
+  .movie-card {
+    width: 100%;
+  }
+
+  h1, h2, h3 {
+    font-size: 0.8rem; /* Scale down the text */
+  }
+
+  .menu-button {
+    padding: 1rem;
+    font-size: 1.2rem; /* Make the menu button smaller */
   }
 }
+
+@media (max-width: 480px) {
+  .movies {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two flexible columns on very small screens */
+    gap: 10px; /* Reduce gap for smaller screens */
+    justify-content: center; /* Center the content horizontally */
+  }
+
+  .menu-button {
+    padding: 0.5rem;
+    font-size: 1rem; /* Make the menu button even smaller */
+  }
+
+  .movie-card img {
+    max-width: 120px; /* Reduce image size for very small screens */
+  }
+
+  h2 {
+    font-size: 0.9rem; /* Make headings smaller */
+    margin-left: 0;
+    padding: 19px;
+  }
+
+  h3 {
+    font-size: 0.4rem; /* Reduce the size of movie titles */
+  }
+}
+
+
 
 .loading {
   display: flex;
